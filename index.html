@@ -1,0 +1,42 @@
+<!--@format-->
+
+<div id="calculator">
+  <p id="calcHeader">
+    Wondering how much product you might need? Guidelines listed below will help
+    you make an informed decision
+  </p>
+
+  <p id="calcInstructions">
+    To determine the amount of product you need in cubic yards, simply enter the
+    square footage and select the depth
+  </p>
+
+  <input
+    type="text"
+    id="square-foot"
+    name="square-foot"
+    placeholder="square footage"
+  />
+  <select id="product-depth">
+    <option value="0">select product depth</option>
+    <option value="0.125">1/8 inches</option>
+    <option value="0.25">1/4 inches</option>
+    <option value="0.5">1/2 inches</option>
+    <option value="1">1 inch</option>
+    <option value="2">2 inches</option>
+    <option value="3">3 inches</option>
+    <option value="4">4 inches</option>
+    <option value="5">5 inches</option>
+    <option value="6">6 inches</option>
+  </select>
+  <br />
+  <button type="submit" onclick="calculate()">calculate</button>
+  <div id="results-div">
+    <p id="results-p"><i>use above form to calculate</i></p>
+  </div>
+  <br />
+  <p>Rather do the math yourself? Here's the formula:</p>
+  <p id="formula">
+    <i>square footage</i> X <i>depth in inches</i> X <i>.003</i>
+  </p>
+</div>

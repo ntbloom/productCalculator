@@ -1,0 +1,23 @@
+/* @format */
+
+#calculator {
+  font-family: futura, sans-serif;
+  font-weight: normal;
+}
+
+#calcHeader {
+  font-size: 1.5em;
+}
+
+#calcInstructions {
+  font-size: 0.75em;
+}
+
+#results-p {
+  color: #267e34;
+}
+
+#formula {
+  margin-left: 2em;
+  color: #808080;
+}
