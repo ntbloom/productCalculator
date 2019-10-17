@@ -45,16 +45,20 @@
     function calculate() {
       const depth = parseFloat(document.querySelector('#product-depth').value);
       const sf = parseFloat(document.querySelector('#square-foot').value);
-      const n = Math.ceil(depth * sf * 0.003);
+      const rawN = depth * sf * 0.003;
+      const n = Math.ceil(rawN);
       const para = document.getElementById('results-p');
 
-      //console.log("sf=",sf, "| depth=",depth, "| n=",n);
+      let string = '';
       if (isNaN(n)) {
-        n = 0;
-      }
-      let string = 'You need ' + n + ' cubic yards of product';
-      if (n == 1) {
-        string = 'You need ' + n + ' cubic yard of product';
+        string = 'Please enter a numeric value';
+      } else if (rawN < 0.5) {
+        string = 'You need less than 1 cubic yard of product';
+      } else if (n === 1) {
+        string = 'You need about 1 cubic yard of product';
+      } else {
+        string =
+          'You need about ' + n.toLocaleString() + ' cubic yards of product';
       }
       para.innerHTML = string;
     }
@@ -64,19 +68,22 @@
     id="square-foot"
     name="square-foot"
     placeholder="square footage (# only)"
+    size="15"
   />
+  <label for="square-foot">square feet</label>
+  <br />
   <select id="product-depth">
     <option value="0">select product depth</option>
-    <option value="0.125">1/8 inches</option>
-    <option value="0.25">1/4 inches</option>
-    <option value="0.5">1/2 inches</option>
-    <option value="0.75">3/4 inches</option>
-    <option value="1">1 inch</option>
-    <option value="2">2 inches</option>
-    <option value="3">3 inches</option>
-    <option value="4">4 inches</option>
-    <option value="5">5 inches</option>
-    <option value="6">6 inches</option>
+    <option value="0.125">1/8 inches deep</option>
+    <option value="0.25">1/4 inches deep</option>
+    <option value="0.5">1/2 inches deep</option>
+    <option value="0.75">3/4 inches deep</option>
+    <option value="1">1 inch deep</option>
+    <option value="2">2 inches deep</option>
+    <option value="3">3 inches deep</option>
+    <option value="4">4 inches deep</option>
+    <option value="5">5 inches deep</option>
+    <option value="6">6 inches deep</option>
   </select>
   <br />
   <p></p>
